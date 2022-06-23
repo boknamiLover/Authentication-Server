@@ -9,6 +9,8 @@ Project is created with:
 * JWT
 * JPA
 * Swagger
+* Gradle
+* ModelMapper
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
