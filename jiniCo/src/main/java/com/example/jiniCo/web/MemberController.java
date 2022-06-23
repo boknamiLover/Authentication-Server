@@ -139,7 +139,7 @@ public class MemberController {
 	 * @throws Exception 
 	 */
 	@Login
-	@PostMapping(value="/me")
+	@PostMapping(value="/getMyInfo")
 	@ApiOperation(value="내 정보 보기")
 	public ResponseEntity<MemberDto> getMyInfo(HttpServletRequest request) throws Exception {
 		
@@ -151,74 +151,5 @@ public class MemberController {
 		log.info("##### getMyInfo END result = {}", member);
 		
 		return ResponseEntity.ok().body(member);
-	}
-	
-	
-	/**
-	 * 환급용 정보 스크랩 하기
-	 * 
-	 * @param request
-	 * @return
-	 * @throws Exception
-	 */
-	@Login
-	@PostMapping(value="/scrap")
-	@ApiOperation(value="스크팹")
-	public ResponseEntity<Map<String, Object>> doScrap(HttpServletRequest request) throws Exception {
-		
-		log.info("##### doScrap START");
-		Map<String, Object> result = new HashMap<>();
-		
-		
-		// 회원정보 조회
-		MemberDto member = memberService.getUserInfo(request);
-		
-		
-		// TODO 스크랩하기
-		
-		
-		log.info("##### doScrap END result = {}", result.toString());
-		
-		if ( result.containsKey("Message") ) {
-			return ResponseEntity.ok().body(result);
-			
-		} else {
-			// 에러
-			return ResponseEntity.internalServerError().body(result);
-		}
-	}
-	
-	
-	/**
-	 * 환급액 계산하기
-	 * 
-	 * @param request
-	 * @return
-	 * @throws Exception
-	 */
-	@Login
-	@PostMapping(value="/refund")
-	@ApiOperation(value="환급액 계산")
-	public ResponseEntity<Map<String, Object>> refund(HttpServletRequest request) throws Exception {
-		
-		log.info("##### refund START");
-		Map<String, Object> result = new HashMap<>();
-		
-		
-		// 회원정보 조회
-		MemberDto member = memberService.getUserInfo(request);
-		
-		// TODO 환급액 계산하기
-		
-		
-		log.info("##### refund END result = {}", result.toString());
-		
-		if ( result.containsKey("Message") ) {
-			return ResponseEntity.ok().body(result);
-			
-		} else {
-			// 에러
-			return ResponseEntity.internalServerError().body(result);
-		}
 	}
 }
