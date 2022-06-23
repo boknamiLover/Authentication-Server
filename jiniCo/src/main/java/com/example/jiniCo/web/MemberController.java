@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/szs")
+@RequestMapping("/mem")
 @Api(tags = {"과제 API"} )
 public class MemberController {
 	
