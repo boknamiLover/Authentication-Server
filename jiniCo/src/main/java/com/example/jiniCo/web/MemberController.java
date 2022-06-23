@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/mem")
-@Api(tags = {"과제 API"} )
+@Api(tags = {"Membership API"} )
 public class MemberController {
 	
 	private final MemberService memberService;
