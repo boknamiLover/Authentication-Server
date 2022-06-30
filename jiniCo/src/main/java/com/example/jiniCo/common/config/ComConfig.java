@@ -16,6 +16,6 @@ public class ComConfig implements WebMvcConfigurer {
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(loginInterceptor).addPathPatterns("/szs/*");
+		registry.addInterceptor(loginInterceptor).addPathPatterns("/mem/*");
 	}
 }
